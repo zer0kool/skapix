@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="{% static 'assets/materialize/css/materialize.min.css' %}" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="{% static 'assets/css/style.css' %}" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <header></header>
+
+    <main>
+         <center>
+<!--            <img class="responsive-img" style="width: 250px;" src="https://i.imgur.com/ax0NCsK.gif" />-->
+            <div class="section"></div>
+
+<!--            <h5 class="indigo-text">Please, login into your account</h5>-->
+            <div class="section"></div>
+
+            <div class="container section">
+                <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #E0F2F1;">
+
+                    <form class="col s12" method="post">
+                       {% csrf_token %}
+                        <div class='row'>
+                            <div class='col s12'>
+                            <div class="illustration">
+                            <img class="responsive-img" src="{% static 'assets/img/logo.png' %}" style="height:10vh" >
+                            <div style="display: none" id="errors" class="alert"></div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class='input-field col s12'>
+                               <i class="material-icons prefix">account_circle</i>
+                                <input class='validate' type='text' name='username' id='username' required=""/>
+                                <label for='email'>Create a username</label>
+                            </div>
+                        </div>
+
+                        <div class='row'>
+                            <div class='input-field col s12'>
+                               <i class="material-icons prefix">mail</i>
+                                <input class='validate' type='email' name='email' id='email' required="" />
+                                <label for='email'>Enter your email</label>
+                            </div>
+                        </div>
+
+                        <div class='row'>
+                            <div class='input-field col s12'>
+                               <i class="material-icons prefix">enhanced_encryption</i>
+                                <input class='validate' type='password' name='password' id='password' required=""/>
+                                <label for='password'>Enter your password</label>
+                            </div>
+                        </div>
+
+                        <br />
+                        <center>
+                            <div class='row'>
+                                <button id="go" type='submit' name='btn_login' class='col s12 btn btn-large waves-effect indigo'>Create Account</button>
+                            </div>
+                        </center>
+                        <a href='/' class="forgot">Already got an account? Login here ...</a>
+                        <div class="section"></div>
+                    </form>
+                </div>
+            </div>
+        </center>
+    </main>
+
+    <footer></footer>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'assets/materialize/js/materialize.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/init.js' %}"></script>
+    <script src="{% static 'assets/js/django-ajax.js' %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+        $('#go').click(function() {
+        $.post("ajax-sign-up",
+    {
+        username: $("#username").val(),
+        email: $("#email").val(),
+        password: $("#password").val()
+    },
+    function(data, status){
+	if (JSON.parse(data).Status == 'Success') {
+		window.location = '/';
+	} else {
+		$('#errors').html("<span>" + JSON.parse(data).Message + "</span>")
+		$('#errors').css('display', 'block')
+	}
+    });
+        return false;
+        })
+})
+    </script>
+</body>
+
+</html>

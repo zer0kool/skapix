@@ -1,0 +1,449 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<!--login profile gage-->
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="{% static 'assets/materialize/css/materialize.min.css' %}" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="{% static 'assets/css/style.css' %}" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="{% static 'assets/css/dark.css' %}" id="switch_style" media="screen,projection" />
+</head>
+
+<body>
+
+       <!--==========================================
+                  PRE-LOADER
+===========================================-->
+    <div id="loading">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div class="box-holder animated bounceInDown">
+                    <span class="load-box"><span class="box-inner"></span></span>
+                </div>
+                <!-- NAME & STATUS -->
+                <div class="text-holder text-center">
+                    <h2>SKAPIX</h2>
+                    <h6>From an Immigrant with love.</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--==========================================
+                    HEADER
+===========================================-->
+
+    <div class="overlay"></div>
+        <div class="container-fluid header-top">
+            <div class="col-md-12" style="padding:0px;">
+                    <div class="top-menu-logo"><a href="/"><img src="{% static 'assets/img/logo.png' %}" class="center-block" style="height:40px;margin-top:10px;margin-bottom:10px;"></a>
+                    <div class="menu-buttons">
+                    <button class="btn btn-default" type="button" id="upload-but"><i class="material-icons">add_a_photo</i></button>
+                    <a href="/{{ user.username }}"><button class="btn btn-default" type="button" id="profile-but"><i class="material-icons">account_circle</i></button></a>
+                </div>
+                </div>
+                </div>
+            </div>
+          <header id="home">
+        <!--HEADER BACKGROUND-->
+        <div class="header-background section"></div>
+    </header>
+
+
+        <div class="container img-container">
+        <div id="upload-div">
+            <div class="img-div" style="position: relative; margin-bottom: 0px">
+                <div class="header"><img class="img-circle" src="{{ ProfilePic }}">
+                    <label>/{{ logged_in_as }}</label>
+                </div>
+                <div class="empty-upload-container">
+                    <div style="width: 100%; height: 300px">
+                        <!-- <h1>Upload an Image</h1> -->
+                        <h1>
+                            <div class="uploader-grey-button image-preview">
+                                <input type="hidden" role="uploadcare-uploader" data-clearable="" data-images-only="">
+                            </div>
+                        </h1>
+                    </div>
+                </div>
+                <div id="caption-div" class="upload-photo-options">
+                    <h1>Add a caption</h1>
+                    <input type="text" maxlength="140" style="width:100%;border:none;font-size:16px;height:48px;outline:none;padding:0px 10px;" id="captionbox" placeholder="Type your caption here ...">
+                </div>
+                <div id="filter-div" class="upload-photo-options" style="height: 150px">
+                    <h1>Choose a Filter</h1>
+                    <div style="width:100%;overflow-x:scroll;">
+                        <div style="width:100%;overflow-x:scroll;">
+                            <div style="height:100px;overflow:hidden;min-width:160%;">
+                                <div class="effect"><img src="" class="grayscale">
+                                    <label>Grayscale </label>
+                                </div>
+                                <div class="effect"><img src="" class="invert">
+                                    <label>Invert </label>
+                                </div>
+                                <div class="effect"><img src="" class="blur">
+                                    <label>Blur </label>
+                                </div>
+                                <div class="effect"><img src="" class="flip">
+                                    <label>Flip </label>
+                                </div>
+                                <div class="effect"><img src="" class="mirror">
+                                    <label>Mirror </label>
+                                </div>
+                                <div class="effect"><img src="">
+                                    <label>Sharp </label>
+                                </div>
+                                <div class="effect"><img src="">
+                                    <label>Enhance </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="upload-options-disabled"></div>
+                <div class="hidden-xs more-section"><a href="javascript:void(0)" id="caption-but" class="upload-options caption-but"><i class="fa fa-comments-o"></i> Add a caption</a><a href="javascript:void(0)" id="filter-but" class="upload-options filter-but"><i class="icon ion-android-options"></i> Add a filter</a>
+                    <a href="javascript:void(0)" id="rotate-but" class="upload-options rotate-but"><i class="fa fa-rotate-right"></i> Rotate photo</a>
+                    <button class="save-photo btn btn-primary btn-block upload-button" type="submit">Save Photo</button>
+                </div>
+                <div class="hidden-sm hidden-md hidden-lg more-section"><a href="javascript:void(0)" class="upload-options small caption-but"><i class="fa fa-comments-o"></i></a><a href="javascript:void(0)" class="upload-options small filter-but" style="padding:10px;"><i class="icon ion-android-options"></i></a><a href="javascript:void(0)" class="upload-options small rotate-but" style="padding:13px;"><i class="fa fa-rotate-right"></i></a>
+                    <button class="save-photo btn btn-primary btn-block upload-button" type="submit">Save</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!--==========================================
+                   V-CARD
+===========================================-->
+    <div id="v-card-holder" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+
+                    <!-- V-CARD -->
+                    <div id="v-card" class="card">
+
+                        <!-- PROFILE PICTURE -->
+                        <div id="profile" class="right">
+                            <img alt="profile-image" id="profilepic" class="img-responsive" src="{{ ProfilePic }}">
+                            <div class="slant"></div>
+
+                            <!--VIDEO PLAY BUTTON-->
+                            <div id="button-holder" class="btn-holder">
+                                <div id="play-btn" class="btn-floating btn-large btn-play">
+                                    <i id="icon-play" class="material-icons">play_arrow</i>
+                                </div>
+                            </div>
+                        </div>
+                        <!--VIDEO CLOSE BUTTON-->
+                        <div id="close-btn" class="btn-floating icon-close">
+                            <i class="fa fa-close"></i>
+                        </div>
+
+                        <div class="card-content">
+
+                            <!-- NAME & STATUS -->
+                            <div class="info-headings">
+                                <h4 class="text-uppercase left">{{whosprofile}}</h4>
+                                <button id="follow" class="btn btn-default btn-primary follow-button" type="button">{{ following }}</button>
+                            </div>
+
+                            <!-- CONTACT INFO -->
+                            <div class="infos">
+                                <ul class="profile-list">
+                                    <li class="clearfix">
+                                        <span class="title"><i class="material-icons">email</i></span>
+                                        <span class="content">{{ user.sign_up_date }}</span>
+                                    </li>
+                                    <li class="clearfix">
+                                        <span class="title"><i class="material-icons">place</i></span>
+                                        <span class="content">Mount Vernon, WA</span>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                            <!--LINKS-->
+                            <div class="links">
+                                <!-- FACEBOOK-->
+                                <a href="#" id="first_one" class="social btn-floating indigo"><i
+                                    class="fa fa-facebook"></i></a>
+                                <!-- TWITTER-->
+                                <a href="#" class="social  btn-floating blue"><i
+                                    class="fa fa-twitter"></i></a>
+                                <!-- GOOGLE+-->
+                                <a href="#" class="social  btn-floating red"><i
+                                    class="fa fa-google-plus"></i></a>
+                                <!-- LINKEDIN-->
+                                <a href="#" class="social  btn-floating blue darken-3"><i
+                                    class="fa fa-linkedin"></i></a>
+                                <!-- RSS-->
+                                <a href="#" class="social  btn-floating orange darken-3"><i
+                                    class="fa fa-rss"></i></a>
+                            </div>
+                        </div>
+                        <!--HTML 5 VIDEO-->
+                        <!--
+                    <video id="html-video" class="video" poster="images/poster/poster.jpg" controls>
+                        SERVER HOSTED VIDEO
+                        <source src="videos/b.webm" type="video/webm">
+                        <source src="videos/a.mp4" type="video/mp4">
+                    </video>
+-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="photo-viewer">
+        <div class="img-div">
+            <div class="header">
+                <img class="img-circle" src="{{ ProfilePic }}"><label>/{{whosprofile}}</label></div>
+            <img style="max-height: 500px" id="detailphoto" src="">
+            <div class="header">
+                <a id="likephoto" href="javascript:void(0)" data-postid=""><i class="fa fa-heart-o"></i></a></div>
+            <div class="more-section"><label><span id="likes"></span> Likes</label>
+                <p><strong>/{{whosprofile}} </strong><span id="cap"></span></p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="col-md-12 profile-imgs">
+            <div id="loadposts">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'assets/materialize/js/materialize.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/init.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/custom-dark.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/django-ajax.js' %}"></script>
+    <script src="https://ucarecdn.com/libs/widget/3.0.0/uploadcare.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="{% static 'assets/js/upload-sys.js' %}"></script>
+    <script type="text/javascript">
+        < script type = "text/javascript" >
+            $('#follow').click(function() {
+                $.ajax({
+                    type: "GET",
+                    url: "ajax-follow?user={{whosprofile}}",
+                    processData: false,
+                    contentType: "application/json",
+                    data: '',
+                    success: function(r) {
+                        if (JSON.parse(r).Following == true) {
+                            $('#follow').html("Unfollow")
+                        } else {
+                            $('#follow').html("Follow")
+                        }
+                    },
+                    error: function(r) {
+
+                    }
+                });
+            });
+        var start = 0;
+
+        function getPosts() {
+            $.ajax({
+                type: "GET",
+                url: "ajax-profile-feed?username={{whosprofile}}&start=" + start,
+                processData: false,
+                contentType: "application/json",
+                data: '',
+                success: function(r) {
+                    r = JSON.parse(r)
+                    for (var i = 0; i < r.length; i++) {
+                        r[i].URL += '-/quality/lightest/'
+                        $('#loadposts').append('<div class="photo" data-liked=' + r[i].Liked + ' data-postid="' + r[i].PostID + '" data-likes="' + r[i].Likes + '" data-caption="' + r[i].Caption + '" style="background-color: rgb(' + r[i].MainColour + '); background-image:url(' + r[i].URL + ')"></div>')
+                    }
+                    $('.photo').each(function() {
+                        $(this).off('click')
+                        $(this).click(function() {
+                            $('#cap').html($(this).data('caption'))
+                            $('#likephoto').data('postid', $(this).data('postid'))
+                            if ($(this).data('caption') == "") {
+                                $('#cap').html("")
+                            }
+                            $('#likes').html($(this).data('likes'))
+                            if ($(this).data('liked') == true) {
+                                $('#likephoto').css('color', '#440e96')
+                                $('#likephoto i').attr('class', 'fa fa-heart')
+                            } else {
+                                $('#likephoto').css('color', '#333')
+                                $('#likephoto i').attr('class', 'fa fa-heart-o')
+                            }
+                            var s = $(this).css('background-image').split("url(\"")[1]
+                            var tmpImg = new Image();
+                            tmpImg.src = s.slice(0, s.length - 21);
+                            tmpImg.onload = function() {
+                                $('#detailphoto').attr('src', tmpImg.src)
+                                $('.photo-viewer').show()
+                                $('#upload-div').hide()
+                                $('.overlay').fadeToggle('fast')
+                                $('body').css('overflow', 'hidden')
+                            };
+                        })
+                    })
+                },
+                error: function(r) {
+
+                }
+            });
+            start += 3;
+        }
+        $(document).ready(function() {
+            $(window).scroll()
+            getPosts()
+        })
+        $('#likephoto').click(function() {
+            $.ajax({
+                type: "GET",
+                url: "ajax-like-photo?id=" + $('#likephoto').data('postid'),
+                processData: false,
+                contentType: "application/json",
+                data: '',
+                success: function(r) {
+                    if (JSON.parse(r).Status == 'Success') {
+                        $('[data-postid]').each(function() {
+                            if ($(this).data('postid') == $('#likephoto').data('postid')) {
+                                if ($(this).data('liked') == false) {
+                                    $(this).data('liked', true)
+                                    $('#likephoto').css('color', '#440e96')
+                                    $('#likephoto i').attr('class', 'fa fa-heart')
+                                } else {
+                                    $(this).data('liked', false)
+                                    $('#likephoto').css('color', '#333')
+                                    $('#likephoto i').attr('class', 'fa fa-heart-o')
+                                }
+                            }
+                        })
+                    }
+                },
+                error: function(r) {
+
+                }
+            })
+        })
+        var working = false;
+        $(window).scroll(function() {
+            if ($(this).scrollTop() + 1 >= $('body').height() - $(window).height()) {
+                if (working == false) {
+                    working = true;
+                    getPosts();
+                    setTimeout(function() {
+                        working = false;
+                    }, 4000)
+                }
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        var start = 3;
+        $(document).ready(function() {
+            $.ajax({
+                type: "GET",
+                url: "ajax-profile-feed?username={{whosprofile}}&start=0",
+                processData: false,
+                contentType: "application/json",
+                data: '',
+                success: function(r) {
+                    r = JSON.parse(r)
+                    for (var i = 0; i < r.length; i++) {
+                        r[i].URL += '-/quality/lightest/'
+                        $('#loadposts').append('<div class="photo" data-likes="' + r[i].Likes + '" data-caption="' + r[i].Caption + '" style="background-image:url(' + r[i].URL + ')"></div>')
+                    }
+                    $('.photo').each(function() {
+                        $(this).click(function() {
+                            $('#cap').html($(this).data('caption'))
+                            if ($(this).data('caption') == "") {
+                                $('#cap').html("")
+                            }
+                            $('#likes').html($(this).data('likes'))
+                            var s = $(this).css('background-image').split("url(\"")[1]
+                            var tmpImg = new Image();
+                            tmpImg.src = s.slice(0, s.length - 21);
+                            tmpImg.onload = function() {
+                                $('#detailphoto').attr('src', tmpImg.src)
+                                $('.photo-viewer').show()
+                                $('#upload-div').hide()
+                                $('.overlay').fadeToggle('fast')
+                                $('body').css('overflow', 'hidden')
+                            };
+                        })
+                    })
+                },
+                error: function(r) {
+
+                }
+            });
+        })
+        var working = false;
+        $(window).scroll(function() {
+            if ($(this).scrollTop() + 1 >= $('body').height() - $(window).height()) {
+                if (working == false) {
+                    working = true;
+                    $.ajax({
+                        type: "GET",
+                        url: "ajax-profile-feed?username={{whosprofile}}&start=" + start,
+                        processData: false,
+                        contentType: "application/json",
+                        data: '',
+                        success: function(r) {
+                            r = JSON.parse(r)
+                            for (var i = 0; i < r.length; i++) {
+                                r[i].URL += '-/quality/lightest/'
+                                $('#loadposts').append('<div class="photo" data-likes="' + r[i].Likes + '" data-caption="' + r[i].Caption + '" style="background-image:url(' + r[i].URL + ')"></div>')
+                            }
+                            start += 3;
+
+                            $('.photo').each(function() {
+                                $(this).off('click')
+                                $(this).click(function() {
+                                    $('#cap').html($(this).data('caption'))
+                                    if ($(this).data('caption') == "") {
+                                        $('#cap').html("")
+                                    }
+                                    $('#likes').html($(this).data('likes'))
+                                    var s = $(this).css('background-image').split("url(\"")[1]
+                                    var tmpImg = new Image();
+                                    tmpImg.src = s.slice(0, s.length - 21);
+                                    tmpImg.onload = function() {
+                                        $('#detailphoto').attr('src', tmpImg.src)
+                                        $('.photo-viewer').show()
+                                        $('#upload-div').hide()
+                                        $('.overlay').fadeToggle('fast')
+                                        $('body').css('overflow', 'hidden')
+                                    };
+
+                                })
+                            })
+                        },
+                        error: function(r) {
+
+                        }
+                    });
+                    setTimeout(function() {
+                        working = false;
+                    }, 4000)
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
