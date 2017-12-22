@@ -29,7 +29,7 @@ SECRET_KEY = 'nvqwd0(ptahogm2d*j4j1fkgk2gi!v07$f7go!m!k_jf3p*9jp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', 'skapix.herokuapp.com']
 
 
 # Application definition
