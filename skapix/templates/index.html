@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-<body>
+<body style="background-color:#607D8B">
     <header></header>
 
     <main>
@@ -21,7 +21,7 @@
 <!--            <img class="responsive-img" style="width: 250px;" src="https://i.imgur.com/ax0NCsK.gif" />-->
             <div class="section"></div>
 
-<!--            <h5 class="indigo-text">Please, login into your account</h5>-->
+            <h5 class="white-text">Please, login into your account</h5>
             <div class="section"></div>
 
             <div class="container section">
@@ -33,6 +33,7 @@
                             <div class='col s12'>
                             <div class="illustration">
                             <img class="responsive-img" src="{% static 'assets/img/logo.png' %}" style="height:10vh" >
+                            <div style="display: none" id="errors" class="alert"></div>
                             </div>
                             </div>
                         </div>
@@ -67,7 +68,7 @@
                     </form>
                 </div>
             </div>
-            <a href="sign-up">Create account</a>
+            <a class="white-text" href="sign-up">Create account</a>
         </center>
     </main>
 

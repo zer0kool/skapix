@@ -8,3 +8,14 @@
         <p><strong>/' + r[i].Owner + ' </strong>' + r[i].Caption + '</p>
     </div>
 </div>
+
+
+<div class="row"><div class="col s12"><div class="card"><div class="card-image"><img class="responsive-ima; background-color: rgb(' + r[i].MainColour + ')" src="' + r[i].URL + '"><span class="card-title"><label>' + r[i].Likes + ' Likes</label></span><a href="javascript:void(0)" class="likephoto" data-liked=' + r[i].Liked + ' data-postid="' + r[i].PostID + '" data-likes="' + r[i].Likes + '"><i class="material-icons">add</i></a></div><div class="card-content"><p><strong>/' + r[i].Owner + ' </strong>' + r[i].Caption + '</p></div></div></div></div>
+
+
+
+
+for (var i = 0; i < r.length; i++) {
+                            r[i].URL += '-/quality/lightest/'
+                            $('#loadposts').append('<div class="row"><div class="col s12"><div class="card"><div class="card-image"><img class="responsive-ima; background-color: rgb(' + r[i].MainColour + ')" src="' + r[i].URL + '"><span class="card-title"><label>' + r[i].Likes + ' Likes</label></span><a href="javascript:void(0)" class="likephoto" data-liked=' + r[i].Liked + ' data-postid="' + r[i].PostID + '" data-likes="' + r[i].Likes + '"><i class="material-icons">add</i></a></div><div class="card-content"><p><strong>/' + r[i].Owner + ' </strong>' + r[i].Caption + '</p></div></div></div></div>')
+                        }

@@ -27,9 +27,9 @@ STATICFILES_DIRS = (
 SECRET_KEY = 'nvqwd0(ptahogm2d*j4j1fkgk2gi!v07$f7go!m!k_jf3p*9jp'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'skapix.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'skapix.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -141,4 +141,3 @@ PASSWORD_HASHERS = (
 )
 
 AUTHENTICATION_BACKENDS = ( 'skapix.authb.AuthB', )
-

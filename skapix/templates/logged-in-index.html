@@ -11,6 +11,7 @@
     <link type="text/css" rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}" media="screen,projection" />
     <link type="text/css" rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}" media="screen,projection" />
     <link type="text/css" rel="stylesheet" href="{% static 'assets/css/dark.css' %}" id="switch_style" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css' %}" />
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,7 +41,7 @@
         <div class="col-md-12" style="padding:0px;">
             <div class="top-menu-logo"><a href="/"><img src="{% static 'assets/img/logo.png' %}" class="center-block" style="height:40px;margin-top:10px;margin-bottom:10px;"></a>
                 <div class="menu-buttons">
-                    <button class="btn btn-default" type="button" id="upload-but"><i class="material-icons">add_a_photo</i></button>
+<!--                    <button class="btn btn-default" type="button" id="upload-but"><i class="material-icons">add_a_photo</i></button>-->
                     <a href="/{{ user.username }}"><button class="btn btn-default" type="button" id="profile-but"><i class="material-icons">account_circle</i></button></a>
                 </div>
             </div>
@@ -110,204 +111,98 @@
         <div id="loadposts"></div>
     </div>
 
-    <!--
-        <main>
-            <div class="container center">
-                <div class="row">
-                    <div class="col s12">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="{% static 'assets/img/car.jpg' %}">
-                                <span class="card-title">Card Title</span>
-                                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-                            </div>
-                            <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col s12">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="{% static 'assets/img/kids.jpg' %}">
-                                <span class="card-title">Card Title</span>
-                                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-                            </div>
-                            <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s12">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="{% static 'assets/img/seattle.jpg' %}">
-                                <span class="card-title">Card Title</span>
-                                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-                            </div>
-                            <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col s12">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="{% static 'assets/img/flower.jpg' %}">
-                                <span class="card-title">Card Title</span>
-                                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-                            </div>
-                            <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="col s12">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="{% static 'assets/img/alex.jpg' %}">
-                                <span class="card-title">Card Title</span>
-                                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-                            </div>
-                            <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </main>
--->
-    <div class="card">
-        <div class="card-image">
-            <img src="{% static 'assets/img/car.jpg' %}">
-            <span class="card-title"><div class="chip"><img class="circle responsive-img" style="height:38px" src="{{ ProfilePic }}" alt="Contact Person">{{ user.username }}</div></span>
-            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-        </div>
-        <div class="card-content">
-            <div class="col s12 m8 offset-m2 l6 offset-l3">
-                <div class="card-panel N/A transparent z-depth-1">
-                    <div class="row valign-wrapper">
-                        <div class="col s2">
-                            <img src="{{ ProfilePic }}" style="height:38px" alt="" class="circle responsive-img">
-                            <!-- notice the "circle" class -->
-                        </div>
-                        <div class="col s10">
-                            <span class="white-text">
-                This is a square image. Add the "circle" class to it to make it appear circular.
-              </span>
-                        </div>
-                    </div>
-                </div>
+    <footer class="page-footer red">
+        <div class=" black footer-copyright">
+            <div class="container">
+                © 2017 SKAPIX
+                <a class="grey-text text-lighten-4 right" href="#!">By: Alejandro Loaiza</a>
             </div>
         </div>
-    </div>
-
-        <footer class="page-footer red">
-            <div class=" black footer-copyright">
-                <div class="container">
-                    © 2017 SKAPIX
-                    <a class="grey-text text-lighten-4 right" href="#!">By: Alejandro Loaiza</a>
-                </div>
-            </div>
-        </footer>
+    </footer>
 
 
-        <!--Import jQuery before materialize.js-->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="{% static 'assets/materialize/js/materialize.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'assets/js/init.js' %}"></script>
-        <script type="text/javascript" src="{% static 'assets/js/custom-dark.js' %}"></script>
-        <script type="text/javascript" src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'assets/js/django-ajax.js' %}"></script>
-        <script src="https://ucarecdn.com/libs/widget/3.0.0/uploadcare.min.js" charset="utf-8"></script>
-        <script type="text/javascript" src="{% static 'assets/js/upload-sys.js' %}"></script>
-        <script type="text/javascript">
-            var start = 0;
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'assets/materialize/js/materialize.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/init.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/custom-dark.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/django-ajax.js' %}"></script>
+    <script src="https://ucarecdn.com/libs/widget/3.0.0/uploadcare.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="{% static 'assets/js/upload-sys.js' %}"></script>
+    <script type="text/javascript">
+        var start = 0;
 
-            function getPosts() {
-                $.ajax({
-                    type: "GET",
-                    url: "ajax-photo-feed?&start=" + start,
-                    processData: false,
-                    contentType: "application/json",
-                    data: '',
-                    success: function(r) {
-                        r = JSON.parse(r)
-                        for (var i = 0; i < r.length; i++) {
-                            r[i].URL += '-/quality/lightest/'
-                            $('#loadposts').append('<div class="card"><div class="header"><img style="max-height: 48px" class="img-circle" data-caption="' + r[i].Caption + '" src="' + r[i].ProfilePic + '"><label>/' + r[i].Owner + ' </label></div><img style="max-height:500px; min-height: 300px; background-color: rgb(' + r[i].MainColour + ')" src="' + r[i].URL + '"><div class="header"><a href="javascript:void(0)" class="likephoto" data-liked=' + r[i].Liked + ' data-postid="' + r[i].PostID + '" data-likes="' + r[i].Likes + '"><i class="fa fa-heart-o"></i></a></div><div class="more-section"><label>' + r[i].Likes + ' Likes</label><p><strong>/' + r[i].Owner + ' </strong>' + r[i].Caption + '</p></div></div>')
+        function getPosts() {
+            $.ajax({
+                type: "GET",
+                url: "ajax-photo-feed?&start=" + start,
+                processData: false,
+                contentType: "application/json",
+                data: '',
+                success: function(r) {
+                    r = JSON.parse(r)
+                    for (var i = 0; i < r.length; i++) {
+                        r[i].URL += '-/quality/lightest/'
+                        $('#loadposts').append('<div class="row"><div class="col s12"><div class="card z-depth-3"><div class="card-image"><img class="responsive-ima; background-color: rgb(' + r[i].MainColour + ')" src="' + r[i].URL + '"><span class="card-title"><label>' + r[i].Likes + ' Likes</label></span><a href="javascript:void(0)" class="btn-floating halfway-fab waves-effect waves-light red likephoto" data-liked=' + r[i].Liked + ' data-postid="' + r[i].PostID + '" data-likes="' + r[i].Likes + '"><i class="fa fa-heart-o"></i></a></div><div class="card-content"><p>' + r[i].Caption + '</p></div></div></div></div>')
+                    }
+                    $('.likephoto').each(function() {
+                        if ($(this).data('liked') == true) {
+                            $(this).css('color', '#440e96')
+                            $('i', this).attr('class', 'fa fa-heart')
+                        } else {
+                            $(this).css('color', '#333')
+                            $('i', this).attr('class', 'fa fa-heart-o')
                         }
-                        $('.likephoto').each(function() {
-                            if ($(this).data('liked') == true) {
-                                $(this).css('color', '#440e96')
-                                $('i', this).attr('class', 'fa fa-heart')
-                            } else {
-                                $(this).css('color', '#333')
-                                $('i', this).attr('class', 'fa fa-heart-o')
-                            }
-                            $(this).off('click')
-                            $(this).click(function() {
-                                var but = $(this)
-                                var buti = $('i', this)
-                                $.ajax({
-                                    type: "GET",
-                                    url: "ajax-like-photo?id=" + $(this).data('postid'),
-                                    processData: false,
-                                    contentType: "application/json",
-                                    data: '',
-                                    success: function(r) {
-                                        if (JSON.parse(r).Status == 'Success') {
-                                            if (but.data('liked') == false) {
-                                                but.data('liked', true)
-                                                but.css('color', '#440e96')
-                                                buti.attr('class', 'fa fa-heart')
-                                            } else {
-                                                but.data('liked', false)
-                                                but.css('color', '#333')
-                                                buti.attr('class', 'fa fa-heart-o')
-                                            }
+                        $(this).off('click')
+                        $(this).click(function() {
+                            var but = $(this)
+                            var buti = $('i', this)
+                            $.ajax({
+                                type: "GET",
+                                url: "ajax-like-photo?id=" + $(this).data('postid'),
+                                processData: false,
+                                contentType: "application/json",
+                                data: '',
+                                success: function(r) {
+                                    if (JSON.parse(r).Status == 'Success') {
+                                        if (but.data('liked') == false) {
+                                            but.data('liked', true)
+                                            but.css('color', '#440e96')
+                                            buti.attr('class', 'fa fa-heart')
+                                        } else {
+                                            but.data('liked', false)
+                                            but.css('color', '#333')
+                                            buti.attr('class', 'fa fa-heart-o')
                                         }
-                                    },
-                                    error: function(r) {}
-                                })
+                                    }
+                                },
+                                error: function(r) {}
                             })
                         })
-                    },
-                    error: function(r) {}
-                });
-                start += 3;
-            }
-            $(document).ready(function() {
-                $(window).scroll()
-                getPosts()
-            })
-            var working = false;
-            $(window).scroll(function() {
-                if ($(this).scrollTop() + 1 >= $('body').height() - $(window).height()) {
-                    if (working == false) {
-                        working = true;
-                        getPosts();
-                        setTimeout(function() {
-                            working = false;
-                        }, 4000)
-                    }
-                }
+                    })
+                },
+                error: function(r) {}
             });
-        </script>
-    </body>
+            start += 3;
+        }
+        $(document).ready(function() {
+            $(window).scroll()
+            getPosts()
+        })
+        var working = false;
+        $(window).scroll(function() {
+            if ($(this).scrollTop() + 1 >= $('body').height() - $(window).height()) {
+                if (working == false) {
+                    working = true;
+                    getPosts();
+                    setTimeout(function() {
+                        working = false;
+                    }, 4000)
+                }
+            }
+        });
+    </script>
+</body>
 
 </html>
