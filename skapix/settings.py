@@ -25,7 +25,7 @@ STATICFILES_DIRS = (
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'nvqwd0(ptahogm2d*j4j1fkgk2gi!v07$f7go!m!k_jf3p*9jp'
-heroku config:set SECRET_KEY="nvqwd0(ptahogm2d*j4j1fkgk2gi!v07$f7go!m!k_jf3p*9jp"
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
