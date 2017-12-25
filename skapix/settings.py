@@ -25,7 +25,7 @@ STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
 SECRET_KEY = os.environ.get('SECRET_KEY','nvqwd0(ptahogm2d*j4j1fkgk2gi!v07$f7go!m!k_jf3p*9jp')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = Flase
+DEBUG = False
 
 ALLOWED_HOSTS = ['skapix.herokuapp.com', 'localhost', '127.0.0.1']
 
