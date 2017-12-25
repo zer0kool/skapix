@@ -38,13 +38,24 @@
                     HEADER
 ===========================================-->
 
+<div class="fixed-action-btn toolbar">
+    <a class="btn-floating btn-large green accent-4 hide-on-large-only">
+      <i class="large material-icons">menu</i>
+    </a>
+    <ul>
+        <li><a href="#" onclick="Materialize.toast('This feature is currentlt disable at this moment', 4000)"><i class="material-icons">search</i></a></li>
+        <!--      <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">format_quote</i></a></li>-->
+        <li class="waves-effect waves-light"><a href="#!" id="upload-but"><i class="material-icons">publish</i></a></li>
+        <li class="waves-effect waves-light"><a href="/{{ user.username }}"><i class="material-icons">account_box</i></a></li>
+    </ul>
+</div>
     <nav>
     <div class="nav-wrapper grey darken-3">
       <a href="/" class="brand-logo logo"><i class="material-icons">camera</i>SKAPIX</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#" onclick="Materialize.toast('This feature is currentlt disable at this moment', 4000)"><i class="material-icons">search</i></a></li>
 <!--        <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>-->
-        <li><a id="upload-but"><i class="material-icons">cloud_upload</i></a></li>
+        <li><a href="#!" id="upload-but"><i class="material-icons">cloud_upload</i></a></li>
 <!--        <li><a href="/{{ user.username }}"><i class="material-icons">account_box</i></a></li>-->
       </ul>
     </div>
@@ -121,18 +132,7 @@
     </div>
 
 
- <div class="fixed-action-btn toolbar">
-    <a class="btn-floating btn-large green accent-4 hide-on-large-only">
-      <i class="large material-icons">menu</i>
-    </a>
-    <ul>
-      <li><a href="#" onclick="Materialize.toast('This feature is currentlt disable at this moment', 4000)"><i class="material-icons">search</i></a></li>
-<!--      <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">format_quote</i></a></li>-->
-      <li class="waves-effect waves-light"><a id="upload-but"><i class="material-icons">publish</i></a></li>
-      <li class="waves-effect waves-light"><a href="/{{ user.username }}"><i class="material-icons">account_box</i></a></li>
-    </ul>
-  </div>
-<!--==========================================
+====================================
                    V-CARD
 ===========================================-->
     <div id="v-card-holder" class="section">
