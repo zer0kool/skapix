@@ -1,21 +1,63 @@
-<div class="card">
-    <div class="header">
-        <img class="img-circle" data-caption="' + r[i].Caption + '" src="' + r[i].ProfilePic + '">
-        <label>/' + r[i].Owner + ' </label>
-    </div><img style="max-height: 500px; min-height: 300px; background-color: rgb(' + r[i].MainColour + ')" src="' + r[i].URL + '">
-    <div class="header"><a href="javascript:void(0)" class="likephoto" data-liked=' + r[i].Liked + ' data-postid="' + r[i].PostID + '" data-likes="' + r[i].Likes + '"><i class="fa fa-heart-o"></i></a></div>
-    <div class="more-section"><label>' + r[i].Likes + ' Likes</label>
-        <p><strong>/' + r[i].Owner + ' </strong>' + r[i].Caption + '</p>
+<div class="container img-container">
+    <div id="upload-div">
+        <div class="img-div" style="position: relative; margin-bottom: 0px">
+            <div class="header"><img class="img-circle" src="{{ ProfilePic }}">
+                <label>/{{ user.username }}</label>
+            </div>
+            <div class="empty-upload-container">
+                <div style="width: 100%; height: 700px">
+                    <!-- <h1>Upload an Image</h1> -->
+                    <h1>
+                        <div class="uploader-grey-button image-preview">
+                            <input type="hidden" role="uploadcare-uploader" data-clearable="" data-images-only="">
+                        </div>
+                    </h1>
+                </div>
+            </div>
+            <div id="caption-div" class="upload-photo-options">
+                <h1>Add a caption</h1>
+                <input type="text" maxlength="140" style="width:100%;border:none;font-size:16px;height:48px;outline:none;padding:0px 10px;" id="captionbox" placeholder="Type your caption here ...">
+            </div>
+            <div id="filter-div" class="upload-photo-options" style="height: 150px">
+                <h1>Choose a Filter</h1>
+                <div style="width:100%;overflow-x:scroll;">
+                    <div style="width:100%;overflow-x:scroll;">
+                        <div style="height:100px;overflow:hidden;min-width:160%;">
+                            <div class="effect"><img src="" class="grayscale">
+                                <label>Grayscale </label>
+                            </div>
+                            <div class="effect"><img src="" class="invert">
+                                <label>Invert </label>
+                            </div>
+                            <div class="effect"><img src="" class="blur">
+                                <label>Blur </label>
+                            </div>
+                            <div class="effect"><img src="" class="flip">
+                                <label>Flip </label>
+                            </div>
+                            <div class="effect"><img src="" class="mirror">
+                                <label>Mirror </label>
+                            </div>
+                            <div class="effect"><img src="" class="sharp">
+                                <label>Sharp </label>
+                            </div>
+                            <div class="effect"><img src="" class="enhance">
+                                <label>Enhance </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="upload-options-disabled"></div>
+            <div class="hidden-xs more-section"><a href="javascript:void(0)" id="caption-but" class="upload-options caption-but"><i class="fa fa-comments-o"></i> Add a caption</a><a href="javascript:void(0)" id="filter-but" class="upload-options filter-but"><i class="icon ion-android-options"></i> Add a filter</a>
+                <a href="javascript:void(0)" id="rotate-but" class="upload-options rotate-but"><i class="fa fa-rotate-right"></i> Rotate photo</a>
+                <button class="save-photo btn btn-primary btn-block upload-button" type="submit">Save Photo</button>
+            </div>
+            <div class="hidden-sm hidden-md hidden-lg more-section"><a href="javascript:void(0)" class="upload-options small caption-but"><i class="fa fa-comments-o"></i></a><a href="javascript:void(0)" class="upload-options small filter-but" style="padding:10px;"><i class="icon ion-android-options"></i></a><a href="javascript:void(0)" class="upload-options small rotate-but" style="padding:13px;"><i class="fa fa-rotate-right"></i></a>
+                <button class="save-photo btn btn-primary btn-block upload-button" type="submit">Save</button>
+            </div>
+        </div>
     </div>
+    <!--        // Here is the div that loads the images-->
+    <div id="loadposts"></div>
 </div>
-
-
-<div class="row"><div class="col s12"><div class="card"><div class="card-image"><img class="responsive-ima; background-color: rgb(' + r[i].MainColour + ')" src="' + r[i].URL + '"><span class="card-title"><label>' + r[i].Likes + ' Likes</label></span><a href="javascript:void(0)" class="likephoto" data-liked=' + r[i].Liked + ' data-postid="' + r[i].PostID + '" data-likes="' + r[i].Likes + '"><i class="material-icons">add</i></a></div><div class="card-content"><p><strong>/' + r[i].Owner + ' </strong>' + r[i].Caption + '</p></div></div></div></div>
-
-
-
-
-for (var i = 0; i < r.length; i++) {
-                            r[i].URL += '-/quality/lightest/'
-                            $('#loadposts').append('<div class="row"><div class="col s12"><div class="card"><div class="card-image"><img class="responsive-ima; background-color: rgb(' + r[i].MainColour + ')" src="' + r[i].URL + '"><span class="card-title"><label>' + r[i].Likes + ' Likes</label></span><a href="javascript:void(0)" class="likephoto" data-liked=' + r[i].Liked + ' data-postid="' + r[i].PostID + '" data-likes="' + r[i].Likes + '"><i class="material-icons">add</i></a></div><div class="card-content"><p><strong>/' + r[i].Owner + ' </strong>' + r[i].Caption + '</p></div></div></div></div>')
-                        }
