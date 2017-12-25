@@ -143,7 +143,7 @@ PASSWORD_HASHERS = (
 
 AUTHENTICATION_BACKENDS = ( 'skapix.authb.AuthB', )
 
- Security Testing
+# Security Testing
 CORS_REPLACE_HTTPS_REFERER      = True
 HOST_SCHEME                     = "https://"
 SECURE_PROXY_SSL_HEADER         = ('HTTP_X_FORWARDED_PROTO', 'https')
