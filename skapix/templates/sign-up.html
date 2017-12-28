@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-<body style="background-color:#607D8B">
+<body class="responsive-ima" style="background-image: url('https://wallup.net/wp-content/uploads/2015/12/222946-city-river-water-clouds-mountain-photography-landscape-nature-Hallstatt-Austria.jpg')">
     <header></header>
 
     <main>
@@ -27,7 +27,7 @@
             <div class="container section">
                 <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #E0F2F1;">
 
-                    <form class="col s12" method="post">
+                    <form class=" col s12" method="post">
                        {% csrf_token %}
                         <div class='row'>
                             <div class='col s12'>
@@ -41,7 +41,7 @@
                             <div class='input-field col s12'>
                                <i class="material-icons prefix">account_circle</i>
                                 <input class='validate' type='text' name='username' id='username' required=""/>
-                                <label for='email'>Create a username</label>
+                                <label for='username' data-error="wrong">Create a username</label>
                             </div>
                         </div>
 
@@ -49,14 +49,14 @@
                             <div class='input-field col s12'>
                                <i class="material-icons prefix">mail</i>
                                 <input class='validate' type='email' name='email' id='email' required="" />
-                                <label for='email'>Enter your email</label>
+                                <label for='email' data-error="C'mon, use a legit email" data-success="Ok, the email seems legit">Enter your email</label>
                             </div>
                         </div>
 
                         <div class='row'>
                             <div class='input-field col s12'>
                                <i class="material-icons prefix">enhanced_encryption</i>
-                                <input class='validate' type='password' name='password' id='password' required=""/>
+                                <input type='password' name='password' id='password' required=""/>
                                 <label for='password'>Enter your password</label>
                             </div>
                         </div>
@@ -92,8 +92,19 @@
     },
     function(data, status){
 	if (JSON.parse(data).Status == 'Success') {
+        Materialize.toast('Account Created!', 3000, 'rounded') // 'rounded' is the class I'm applying to the toast
 		window.location = '/';
+        Materialize.toast('Please log-in using your credentials', 3000, 'rounded') // 'rounded' is the class I'm applying to the toast
 	} else {
+        if (JSON.parse(data).Message == "Username already in use."){
+            document.getElementsByTagName("i")[0].setAttribute("class", "material-icons prefix red-text");
+            Materialize.toast('Username already in use.', 4000, 'red')
+        }
+        if (JSON.parse(data).Message == "Password must be between 6 and 32 characters long."){
+            document.getElementsByTagName("i")[2].setAttribute("class", "material-icons prefix red-text");
+            document.getElementsByTagName("input")[3].setAttribute("class", "invalid");
+            Materialize.toast('Password is to weak!', 4000, 'red')
+        }
 		$('#errors').html("<span>" + JSON.parse(data).Message + "</span>")
 		$('#errors').css('display', 'block')
 	}
