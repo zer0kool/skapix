@@ -220,9 +220,11 @@ class AjaxSetProfilePic(Ajax):
 		if self.url[0:20] != "https://ucarecdn.com" or self.baseurl[0:20] != "https://ucarecdn.com":
 			return self.error("Invalid image URL")
 
-		u = User.objects.filter(username=self.user.username)[0]
-		u.profilepic=self.url
-		u.save()
+		if self.user.username == self.owner:
+
+		    u = User.objects.filter(username=self.user.username)[0]
+		    u.profilepic=self.url
+		    u.save()
 
 		return self.success("Profile Image Uploaded")
 
@@ -237,7 +239,7 @@ class AjaxFollow(Ajax):
 			return self.error("Unauthorised request.")
 
 		if self.user.username == self.follower:
-				return self.error("Can't follow yourself")
+ 			return self.error("Can't follow yourself")
 
 		if not Followers.objects.filter(user=self.follower,follower=self.user.username).exists():
 			f = Followers(user=self.follower, follower=self.user.username).save()
@@ -265,8 +267,7 @@ class AjaxDeletePhoto(Ajax):
 		if self.user == "NL":
 			return self.error("Unauthorised request.")
 
-		image = Photo.objects.filter(url=self.url, baseurl=self.baseurl, owner=self.user.username, likes=self.likes, caption=self.caption, main_colour=main_colour)
-		image.baseurl=self.url
+		image = Photo.objects.all()
 		image.delete()
 
 		return self.success("Photo deleted")
