@@ -220,7 +220,7 @@ class AjaxSetProfilePic(Ajax):
 		if self.url[0:20] != "https://ucarecdn.com" or self.baseurl[0:20] != "https://ucarecdn.com":
 			return self.error("Invalid image URL")
 
-		if self.user.username == self.owner:
+		if self.user.username == self.user.username:
 
 		    u = User.objects.filter(username=self.user.username)[0]
 		    u.profilepic=self.url
