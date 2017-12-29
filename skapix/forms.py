@@ -254,3 +254,19 @@ class AjaxTagPhoto(Ajax):
 			self.follower = self.args[0]["user"]
 		except Exception as e:
 			return self.error("Malformed request, did not process.")
+
+class AjaxDeletePhoto(Ajax):
+	def validate(self):
+		try:
+			self.url = self.args[0]["url"]
+		except Exception as e:
+			return self.error("Malformed request, did not process.")
+
+		if self.user == "NL":
+			return self.error("Unauthorised request.")
+
+		image = Photo.objects.filter(url=self.url, baseurl=self.baseurl, owner=self.user.username, likes=self.likes, caption=self.caption, main_colour=main_colour)
+		image.baseurl=self.url
+		image.delete()
+
+		return self.success("Photo deleted")
