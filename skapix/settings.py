@@ -25,7 +25,7 @@ STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
 SECRET_KEY = os.environ.get('SECRET_KEY','nvqwd0(ptahogm2d*j4j1fkgk2gi!v07$f7go!m!k_jf3p*9jp')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['skapix.herokuapp.com', 'localhost', '127.0.0.1']
 
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+#    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -71,9 +71,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'skapix.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -83,9 +80,6 @@ DATABASES = {
 import dj_database_url
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
-
-# Password validation
-# https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -103,9 +97,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/1.11/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -117,13 +108,9 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.9/howto/static-files/
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
-
-# Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
 #    os.path.join(BASE_DIR, "static"),
@@ -144,12 +131,12 @@ PASSWORD_HASHERS = (
 AUTHENTICATION_BACKENDS = ( 'skapix.authb.AuthB', )
 
 # Security Testing
-CORS_REPLACE_HTTPS_REFERER      = True
-HOST_SCHEME                     = "https://"
-SECURE_PROXY_SSL_HEADER         = ('HTTP_X_FORWARDED_PROTO', 'https')
-SECURE_SSL_REDIRECT             = True
-SESSION_COOKIE_SECURE           = True
-CSRF_COOKIE_SECURE              = True
-SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
-SECURE_HSTS_SECONDS             = 1000000
-SECURE_FRAME_DENY               = True
+#CORS_REPLACE_HTTPS_REFERER      = True
+#HOST_SCHEME                     = "https://"
+#SECURE_PROXY_SSL_HEADER         = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT             = False
+SESSION_COOKIE_SECURE           = False
+CSRF_COOKIE_SECURE              = False
+#SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
+#SECURE_HSTS_SECONDS             = 1000000
+#SECURE_FRAME_DENY               = True

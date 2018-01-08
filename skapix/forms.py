@@ -257,17 +257,17 @@ class AjaxTagPhoto(Ajax):
 		except Exception as e:
 			return self.error("Malformed request, did not process.")
 
+
 class AjaxDeletePhoto(Ajax):
 	def validate(self):
 		try:
-			self.url = self.args[0]["url"]
+			self.postid = self.args[0]["id"]
 		except Exception as e:
 			return self.error("Malformed request, did not process.")
 
 		if self.user == "NL":
 			return self.error("Unauthorised request.")
 
-		image = Photo.objects.all()
+		image = Photo.objects.filter(id=self.postid)
 		image.delete()
-
-		return self.success("Photo deleted")
+		return self.success("Photo removed!")

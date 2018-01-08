@@ -15,7 +15,7 @@ def ajaxsavephoto(request):
 	return render(request, 'ajax.html', context)
 
 def ajaxdeletephoto(request):
-	ajax = AjaxDeletePhoto(request.POST, request.user)
+	ajax = AjaxDeletePhoto(request.GET, request.user)
 	context = { 'ajax_output': ajax.output() }
 	return render(request, 'ajax.html', context)
 
