@@ -25,6 +25,3 @@
  		error: function (r) {}
  	});
  });
-
- var $toastContent = $('<span>I am in ALPHA TESTING</span>').add($('<button class="btn-flat toast-action">Undo</button>'));
-  Materialize.toast($toastContent, 10000);
