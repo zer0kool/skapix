@@ -11,26 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-<body class="responsive-ima" style="background-image: url('../static/assets/img/cover.jpg')" >
-
-<!--
-    <div id="loading">
-        <div id="loading-center">
-            <div id="loading-center-absolute">
-                <div class="box-holder animated bounceInDown">
-                    <span class="load-box"><span class="box-inner"></span></span>
-                </div>
-                 NAME & STATUS
-                <div class="text-holder text-center">
-                    <h2>SKAPIX</h2>
-                    <h6>From an Immigrant with love.</h6>
-                </div>
-            </div>
-        </div>
-    </div>
--->
 
 
+<body class="responsive-ima" style="background-image: url('../static/assets/img/cover.jpg')">
     <header>
         <nav>
             <div class="nav-wrapper grey darken-3">
@@ -54,9 +37,7 @@
                             <div class='row'>
                                 <div class='col s12'>
                                     <div class="illustration">
-<!--                                        <h5 class="wt">Please, login into your account</h5>-->
                                         <div style="display: none" id="errors" class="alert red-text">Username or password incorrect</div>
-                                        <!--                            <div style="display: none" class=" alert well form-error-message red-text"><span>Username or password incorrect </span></div>-->
                                     </div>
                                 </div>
                             </div>
@@ -65,25 +46,19 @@
                                 <div class='input-field col s12 m6'>
                                     <i class=" black-text darken-3 material-icons prefix">mail</i>
                                     <input class='validate' type='email' name='email' id='email' required="" />
-                                    <label class="white-text"for="email" data-error="C'mon, use a legit email" data-success="Ok, the email seems legit">Email</label>
+                                    <label class="white-text" for="email" data-error="C'mon, use a legit email" data-success="Ok, the email seems legit">Email</label>
                                 </div>
                                 <div class='input-field col s12 m6'>
                                     <i class="black-text darken-3 material-icons prefix">enhanced_encryption</i>
                                     <input class='validate' type='password' name='password' id='password' required="" />
                                     <label class="white-text" for='password' data-error="Password is too weak">Enter your password</label>
                                 </div>
-<!--
-                                <div class='col s12 m4'>
-                                    <button id="go" type='submit' name='btn_login' class='btn btn-medium waves-effect grey darken-3'>Login</button>
-                                </div>
--->
                             </div>
                             <br />
                             <center>
                                 <div class='row'>
-                                   <a href="sign-up" class='btn btn-medium waves-effect grey darken-3'>Register</a>
+                                    <a href="sign-up" class='btn btn-medium waves-effect grey darken-3'>Register</a>
                                     <button id="go" type='submit' name='btn_login' class='btn btn-medium waves-effect grey darken-3'>Login</button>
-
                                 </div>
                             </center>
                         </form>
@@ -99,42 +74,8 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="{% static 'assets/materialize/js/materialize.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'assets/js/init.js' %}"></script>
-    <script src="{% static 'assets/js/django-ajax.js' %}"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#go').click(function() {
-                $.post("ajax-login", {
-                        email: $("#email").val(),
-                        password: $("#password").val()
-                    },
-                    function(data, status) {
-                        if (JSON.parse(data).Status == 'Success') {
-                            window.location = '';
-                        } else {
-                            $('#errors').html("<span>" + JSON.parse(data).Message + "</span>")
-                            $('#errors').css('display', 'block')
-                            Materialize.toast('Email or password is incorrect.', 4000, 'red')
-                        }
-                    });
-                return false;
-                $('#go').click(function() {
-                    $.post("ajax-login", {
-                            email: $("#email").val(),
-                            password: $("#password").val()
-                        },
-                        function(data, status) {
-                            if (JSON.parse(data).Status == 'Success') {
-                                window.location = '';
-                            } else {
-                                $('#errors').html("<span>" + JSON.parse(data).Message + "</span>")
-                                $('#errors').css('display', 'block')
-                            }
-                        });
-                    return false;
-                })
-            })
-        })
-    </script>
+    <script type="text/javascript" src="{% static 'assets/js/django-ajax.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/index.js' %}"></script>
 </body>
 
 </html>

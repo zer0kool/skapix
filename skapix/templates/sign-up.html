@@ -13,41 +13,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-<body class="responsive-ima" style="background-image: url('https://wallup.net/wp-content/uploads/2015/12/222946-city-river-water-clouds-mountain-photography-landscape-nature-Hallstatt-Austria.jpg')">
-    <header></header>
+
+
+<body class="responsive-ima" style="background-image: url('../static/assets/img/cover.jpg')">
+       <header>
+        <nav>
+            <div class="nav-wrapper grey darken-3">
+                <a href="/" class="brand-logo logo"><i style="width: 8px;" class="red-text material-icons">camera</i>SKAPIX</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="sign-up"><i class="green-text material-icons left">art_track</i>Register</a></li>
+                    <li><a href="#!"><i class="green-text material-icons left">info</i>About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
     <main>
-         <center>
-<!--            <img class="responsive-img" style="width: 250px;" src="https://i.imgur.com/ax0NCsK.gif" />-->
-            <div class="section"></div>
-
-<!--            <h5 class="indigo-text">Please, login into your account</h5>-->
-            <div class="section"></div>
-
+        <center>
             <div class="container section">
-                <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #E0F2F1;">
-
-                    <form class=" col s12" method="post">
-                       {% csrf_token %}
+                <div class="glass z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #E0F2F1;">
+                    <form class="col s12" method="post">
+                        {% csrf_token %}
                         <div class='row'>
                             <div class='col s12'>
-                            <div class="illustration">
-                            <img class="responsive-img" src="{% static 'assets/img/logo.png' %}" style="height:10vh" >
-                            <div style="display: none" id="errors" class="alert red-text"></div>
-                            </div>
+                                <div class="illustration">
+                                    <img class="responsive-img" src="{% static 'assets/img/logo.png' %}" style="height:10vh">
+                                    <div style="display: none" id="errors" class="alert red-text"></div>
+                                </div>
                             </div>
                         </div>
                         <div class='row'>
                             <div class='input-field col s12'>
-                               <i class="material-icons prefix">account_circle</i>
-                                <input class='validate' type='text' name='username' id='username' required=""/>
+                                <i class="material-icons prefix">account_circle</i>
+                                <input class='validate' type='text' name='username' id='username' required="" />
                                 <label for='username' data-error="wrong">Create a username</label>
                             </div>
                         </div>
 
                         <div class='row'>
                             <div class='input-field col s12'>
-                               <i class="material-icons prefix">mail</i>
+                                <i class="material-icons prefix">mail</i>
                                 <input class='validate' type='email' name='email' id='email' required="" />
                                 <label for='email' data-error="C'mon, use a legit email" data-success="Ok, the email seems legit">Enter your email</label>
                             </div>
@@ -55,8 +60,8 @@
 
                         <div class='row'>
                             <div class='input-field col s12'>
-                               <i class="material-icons prefix">enhanced_encryption</i>
-                                <input type='password' name='password' id='password' required=""/>
+                                <i class="material-icons prefix">enhanced_encryption</i>
+                                <input type='password' name='password' id='password' required="" />
                                 <label for='password'>Enter your password</label>
                             </div>
                         </div>
@@ -75,44 +80,13 @@
         </center>
     </main>
 
-    <footer></footer>
+
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="{% static 'assets/materialize/js/materialize.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'assets/js/init.js' %}"></script>
-    <script src="{% static 'assets/js/django-ajax.js' %}"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-        $('#go').click(function() {
-        $.post("ajax-sign-up",
-    {
-        username: $("#username").val(),
-        email: $("#email").val(),
-        password: $("#password").val()
-    },
-    function(data, status){
-	if (JSON.parse(data).Status == 'Success') {
-        Materialize.toast('Account Created!', 3000, 'rounded') // 'rounded' is the class I'm applying to the toast
-		window.location = '/';
-        Materialize.toast('Please log-in using your credentials', 3000, 'rounded') // 'rounded' is the class I'm applying to the toast
-	} else {
-        if (JSON.parse(data).Message == "Username already in use."){
-            document.getElementsByTagName("i")[0].setAttribute("class", "material-icons prefix red-text");
-            Materialize.toast('Username already in use.', 4000, 'red')
-        }
-        if (JSON.parse(data).Message == "Password must be between 6 and 32 characters long."){
-            document.getElementsByTagName("i")[2].setAttribute("class", "material-icons prefix red-text");
-            document.getElementsByTagName("input")[3].setAttribute("class", "invalid");
-            Materialize.toast('Password is to weak!', 4000, 'red')
-        }
-		$('#errors').html("<span>" + JSON.parse(data).Message + "</span>")
-		$('#errors').css('display', 'block')
-	}
-    });
-        return false;
-        })
-})
-    </script>
+    <script type="text/javascript" src="{% static 'assets/js/django-ajax.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/sign-up.js' %}"></script>
 </body>
 
 </html>

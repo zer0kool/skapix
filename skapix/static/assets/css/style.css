@@ -1,3 +1,15 @@
+
+.glass{
+  opacity: 0.9;
+}
+
+.glass:hover{
+    opacity: 1;
+}
+
+
+/*Testing CSS*/
+
 .logo{
     padding-right: 10px;
 }
