@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    "use strict";
     $('#go').click(function () {
         $.post("ajax-sign-up", {
                 username: $("#username").val(),

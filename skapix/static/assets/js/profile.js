@@ -1,5 +1,6 @@
 var start = 3;
 $(document).ready(function () {
+    "use strict";
     $.ajax({
         type: "GET",
         url: "ajax-profile-feed?username={{whosprofile}}&start=0",
