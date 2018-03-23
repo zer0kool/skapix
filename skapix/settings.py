@@ -29,13 +29,13 @@ INSTALLED_APPS = [
 ]
 
 # Access-Control-Allow-Origin Security -- needs testing
-CORS_ORIGIN_ALLOW_ALL = False
-CORS_ORIGIN_WHITELIST = (
-    'localhost:8000', 'skapix.herokuapp.com',
-)
+#CORS_ORIGIN_ALLOW_ALL = False
+#CORS_ORIGIN_WHITELIST = (
+#    'localhost:8000', 'skapix.herokuapp.com',
+#)
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
+#    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
 #    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
