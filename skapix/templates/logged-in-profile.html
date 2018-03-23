@@ -38,7 +38,7 @@
                     HEADER
 ===========================================-->
 
-<!--
+    <!--
     <div class="fixed-action-btn toolbar">
         <a class="btn-floating btn-large green accent-4 hide-on-large-only">
       <i class="large material-icons left">menu</i>
@@ -51,201 +51,199 @@
         </ul>
     </div>
 -->
-      <header id="home">
-    <nav>
-        <div class="nav-wrapper grey darken-3">
-            <a href="/" class="brand-logo logo"><i class="material-icons">camera</i>SKAPIX</a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#" onclick="Materialize.toast('This feature is currentlt disable at this moment', 4000)"><i class="material-icons">search</i></a></li>
-                <!--        <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>-->
-                <li><a id="upload-but"><i class="material-icons">cloud_upload</i></a></li>
-                <!--        <li><a href="/{{ user.username }}"><i class="material-icons">account_box</i></a></li>-->
-            </ul>
-        </div>
-        <div style="height: 5px" class="green accent-4"><br></div>
-    </nav>
+    <header id="home">
+        <nav>
+            <div class="nav-wrapper grey darken-3">
+                <a href="/" class="brand-logo logo"><i class="material-icons">camera</i>SKAPIX</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#" onclick="Materialize.toast('This feature is currentlt disable at this moment', 4000)"><i class="material-icons">search</i></a></li>
+                    <!--        <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>-->
+                    <li><a id="upload-but"><i class="material-icons">cloud_upload</i></a></li>
+                    <!--        <li><a href="/{{ user.username }}"><i class="material-icons">account_box</i></a></li>-->
+                </ul>
+            </div>
+            <div style="height: 5px" class="green accent-4"><br></div>
+        </nav>
 
-<!--    <header id="home">-->
-<!--    <header id="home">-->
         <!--HEADER BACKGROUND-->
         <div class="header-background section"></div>
     </header>
 
-<main>
-    <div class="container img-container">
-        <div id="upload-div">
-            <div class="img-div" style="position: relative; margin-bottom: 0px">
-                <div class="header"><img class="img-circle" src="{{ ProfilePic }}">
-                    <label>/{{ logged_in_as }}</label>
-                </div>
-                <div class="empty-upload-container">
-                    <div style="width: 100%; height: 300px">
-                        <!-- <h1>Upload an Image</h1> -->
-                        <h1>
-                            <div class="uploader-grey-button image-preview">
-                                <input type="hidden" role="uploadcare-uploader" data-clearable="" data-images-only="">
-                            </div>
-                        </h1>
+    <main>
+        <div class="container img-container">
+            <div id="upload-div">
+                <div class="img-div" style="position: relative; margin-bottom: 0px">
+                    <div class="header"><img class="img-circle" src="{{ ProfilePic }}">
+                        <label>/{{ logged_in_as }}</label>
                     </div>
-                </div>
-                <div id="caption-div" class="upload-photo-options">
-                    <h1>Add a caption</h1>
-                    <input type="text" maxlength="140" style="width:100%;border:none;font-size:16px;height:48px;outline:none;padding:0px 10px;" id="captionbox" placeholder="Type your caption here ...">
-                </div>
-                <div id="filter-div" class="upload-photo-options" style="height: 150px">
-                    <h1>Choose a Filter</h1>
-                    <div style="width:100%;overflow-x:scroll;">
+                    <div class="empty-upload-container">
+                        <div style="width: 100%; height: 300px">
+                            <!-- <h1>Upload an Image</h1> -->
+                            <h1>
+                                <div class="uploader-grey-button image-preview">
+                                    <input type="hidden" role="uploadcare-uploader" data-clearable="" data-images-only="">
+                                </div>
+                            </h1>
+                        </div>
+                    </div>
+                    <div id="caption-div" class="upload-photo-options">
+                        <h1>Add a caption</h1>
+                        <input type="text" maxlength="140" style="width:100%;border:none;font-size:16px;height:48px;outline:none;padding:0px 10px;" id="captionbox" placeholder="Type your caption here ...">
+                    </div>
+                    <div id="filter-div" class="upload-photo-options" style="height: 150px">
+                        <h1>Choose a Filter</h1>
                         <div style="width:100%;overflow-x:scroll;">
-                            <div style="height:100px;overflow:hidden;min-width:160%;">
-                                <div class="effect"><img src="" class="grayscale">
-                                    <label>Grayscale </label>
-                                </div>
-                                <div class="effect"><img src="" class="invert">
-                                    <label>Invert </label>
-                                </div>
-                                <div class="effect"><img src="" class="blur">
-                                    <label>Blur </label>
-                                </div>
-                                <div class="effect"><img src="" class="flip">
-                                    <label>Flip </label>
-                                </div>
-                                <div class="effect"><img src="" class="mirror">
-                                    <label>Mirror </label>
-                                </div>
-                                <div class="effect"><img src="">
-                                    <label>Sharp </label>
-                                </div>
-                                <div class="effect"><img src="">
-                                    <label>Enhance </label>
+                            <div style="width:100%;overflow-x:scroll;">
+                                <div style="height:100px;overflow:hidden;min-width:160%;">
+                                    <div class="effect"><img src="" class="grayscale">
+                                        <label>Grayscale </label>
+                                    </div>
+                                    <div class="effect"><img src="" class="invert">
+                                        <label>Invert </label>
+                                    </div>
+                                    <div class="effect"><img src="" class="blur">
+                                        <label>Blur </label>
+                                    </div>
+                                    <div class="effect"><img src="" class="flip">
+                                        <label>Flip </label>
+                                    </div>
+                                    <div class="effect"><img src="" class="mirror">
+                                        <label>Mirror </label>
+                                    </div>
+                                    <div class="effect"><img src="">
+                                        <label>Sharp </label>
+                                    </div>
+                                    <div class="effect"><img src="">
+                                        <label>Enhance </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="upload-options-disabled"></div>
-                <div class="hidden-xs more-section"><a href="javascript:void(0)" id="caption-but" class="upload-options caption-but"><i class="fa fa-comments-o"></i> Add a caption</a><a href="javascript:void(0)" id="filter-but" class="upload-options filter-but"><i class="icon ion-android-options"></i> Add a filter</a>
-                    <a href="javascript:void(0)" id="rotate-but" class="upload-options rotate-but"><i class="fa fa-rotate-right"></i> Rotate photo</a>
-                    <button class="save-photo btn btn-primary btn-block upload-button" type="submit">Save Photo</button>
-                </div>
-                <div class="hidden-sm hidden-md hidden-lg more-section"><a href="javascript:void(0)" class="upload-options small caption-but"><i class="fa fa-comments-o"></i></a><a href="javascript:void(0)" class="upload-options small filter-but" style="padding:10px;"><i class="icon ion-android-options"></i></a><a href="javascript:void(0)" class="upload-options small rotate-but" style="padding:13px;"><i class="fa fa-rotate-right"></i></a>
-                    <button class="save-photo btn btn-primary btn-block upload-button" type="submit">Save</button>
+                    <div class="upload-options-disabled"></div>
+                    <div class="hidden-xs more-section"><a href="javascript:void(0)" id="caption-but" class="upload-options caption-but"><i class="fa fa-comments-o"></i> Add a caption</a><a href="javascript:void(0)" id="filter-but" class="upload-options filter-but"><i class="icon ion-android-options"></i> Add a filter</a>
+                        <a href="javascript:void(0)" id="rotate-but" class="upload-options rotate-but"><i class="fa fa-rotate-right"></i> Rotate photo</a>
+                        <button class="save-photo btn btn-primary btn-block upload-button" type="submit">Save Photo</button>
+                    </div>
+                    <div class="hidden-sm hidden-md hidden-lg more-section"><a href="javascript:void(0)" class="upload-options small caption-but"><i class="fa fa-comments-o"></i></a><a href="javascript:void(0)" class="upload-options small filter-but" style="padding:10px;"><i class="icon ion-android-options"></i></a><a href="javascript:void(0)" class="upload-options small rotate-but" style="padding:13px;"><i class="fa fa-rotate-right"></i></a>
+                        <button class="save-photo btn btn-primary btn-block upload-button" type="submit">Save</button>
+                    </div>
                 </div>
             </div>
+
         </div>
 
-    </div>
 
+        <!--    ==================================== V-CARD ===========================================-->
+        <div id="v-card-holder" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
 
-    <!--    ==================================== V-CARD ===========================================-->
-    <div id="v-card-holder" class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
+                        <!-- V-CARD -->
+                        <div id="v-card" class="card">
 
-                    <!-- V-CARD -->
-                    <div id="v-card" class="card">
+                            <!-- PROFILE PICTURE -->
+                            <div id="profile" class="right">
+                                <img alt="profile-image" id="profilepic" class="img-responsive" src="{{ ProfilePic }}">
+                                <div class="slant"></div>
 
-                        <!-- PROFILE PICTURE -->
-                        <div id="profile" class="right">
-                            <img alt="profile-image" id="profilepic" class="img-responsive" src="{{ ProfilePic }}">
-                            <div class="slant"></div>
-
-                            <!--VIDEO PLAY BUTTON-->
-                            <div id="button-holder" class="btn-holder">
-                                <div id="play-btn" class="btn-floating btn-large btn-play">
-                                    <i id="icon-play" class="material-icons">play_arrow</i>
+                                <!--VIDEO PLAY BUTTON-->
+                                <div id="button-holder" class="btn-holder">
+                                    <div id="play-btn" class="btn-floating btn-large btn-play">
+                                        <i id="icon-play" class="material-icons">play_arrow</i>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!--VIDEO CLOSE BUTTON-->
-                        <div id="close-btn" class="btn-floating icon-close">
-                            <i class="fa fa-close"></i>
-                        </div>
-
-                        <div class="card-content">
-
-                            <!-- NAME & STATUS -->
-                            <div class="info-headings">
-                                <h4 class="text-uppercase left">{{whosprofile}}</h4>
-                                <button id="follow" class="btn btn-default btn-primary follow-button" type="button">{{ following }}</button>
+                            <!--VIDEO CLOSE BUTTON-->
+                            <div id="close-btn" class="btn-floating icon-close">
+                                <i class="fa fa-close"></i>
                             </div>
 
-                            <!-- CONTACT INFO -->
-                            <div class="infos">
-                                <ul class="profile-list">
-                                    <li class="clearfix">
-                                        <span class="title"><i class="material-icons">email</i></span>
-                                        <span class="content">{{ user.sign_up_date }}</span>
-                                    </li>
-                                    <li class="clearfix">
-                                        <span class="title"><i class="material-icons">place</i></span>
-                                        <span class="content">Mount Vernon, WA</span>
-                                    </li>
+                            <div class="card-content">
 
-                                </ul>
-                            </div>
+                                <!-- NAME & STATUS -->
+                                <div class="info-headings">
+                                    <h4 class="text-uppercase left">{{whosprofile}}</h4>
+                                    <button id="follow" class="btn btn-default btn-primary follow-button" type="button">{{ following }}</button>
+                                </div>
 
-                            <!--LINKS-->
-                            <div class="links">
-                                <!-- FACEBOOK-->
-                                <a href="#" id="first_one" class="social btn-floating indigo"><i
+                                <!-- CONTACT INFO -->
+                                <div class="infos">
+                                    <ul class="profile-list">
+                                        <li class="clearfix">
+                                            <span class="title"><i class="material-icons">email</i></span>
+                                            <span class="content">{{ user.sign_up_date }}</span>
+                                        </li>
+                                        <li class="clearfix">
+                                            <span class="title"><i class="material-icons">place</i></span>
+                                            <span class="content">Mount Vernon, WA</span>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                                <!--LINKS-->
+                                <div class="links">
+                                    <!-- FACEBOOK-->
+                                    <a href="#" id="first_one" class="social btn-floating indigo"><i
                                     class="fa fa-facebook"></i></a>
-                                <!-- TWITTER-->
-                                <a href="#" class="social  btn-floating blue"><i
+                                    <!-- TWITTER-->
+                                    <a href="#" class="social  btn-floating blue"><i
                                     class="fa fa-twitter"></i></a>
-                                <!-- GOOGLE+-->
-                                <a href="#" class="social  btn-floating red"><i
+                                    <!-- GOOGLE+-->
+                                    <a href="#" class="social  btn-floating red"><i
                                     class="fa fa-google-plus"></i></a>
-                                <!-- LINKEDIN-->
-                                <a href="#" class="social  btn-floating blue darken-3"><i
+                                    <!-- LINKEDIN-->
+                                    <a href="#" class="social  btn-floating blue darken-3"><i
                                     class="fa fa-linkedin"></i></a>
-                                <!-- RSS-->
-                                <a href="#" class="social  btn-floating orange darken-3"><i
+                                    <!-- RSS-->
+                                    <a href="#" class="social  btn-floating orange darken-3"><i
                                     class="fa fa-rss"></i></a>
+                                </div>
                             </div>
-                        </div>
-                        <!--HTML 5 VIDEO-->
-                        <!--
+                            <!--HTML 5 VIDEO-->
+                            <!--
                     <video id="html-video" class="video" poster="images/poster/poster.jpg" controls>
                         SERVER HOSTED VIDEO
                         <source src="videos/b.webm" type="video/webm">
                         <source src="videos/a.mp4" type="video/mp4">
                     </video>
 -->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-<!--    <img id="detailphoto" class="materialboxed" width="350" src="">-->
+            <img id="detailphoto" class="materialboxed" width="350" src="">
 
 
-    <div class="photo-viewer">
-        <div class="img-div">
-            <div class="header">
-                <button id="delete" class="btn btn-default" type="button">delete</button>
-                <img class="img-circle" src="{{ ProfilePic }}"><label>/{{whosprofile}}</label></div>
-            <img style="max-height: 500px" id="detailphoto" src="">
-<!--            <img id="detailphoto" class="materialboxed" width="650" src="">-->
-            <div class="header">
-                <a id="likephoto" href="javascript:void(0)" data-postid=""><i class="fa fa-heart-o"></i></a></div>
-            <div class="more-section"><label><span id="likes"></span> Likes</label>
-                <p><strong>/{{whosprofile}} </strong><span id="cap"></span></p>
+        <div class="photo-viewer">
+            <div class="img-div">
+                <div class="header">
+                    <button id="delete" class="btn btn-default" type="button">delete</button>
+                    <img class="img-circle" src="{{ ProfilePic }}"><label>/{{whosprofile}}</label></div>
+                <img style="max-height: 500px" id="detailphoto" src="">
+                <!--            <img id="detailphoto" class="materialboxed" width="650" src="">-->
+                <div class="header">
+                    <a id="likephoto" href="javascript:void(0)" data-postid=""><i class="fa fa-heart-o"></i></a></div>
+                <div class="more-section"><label><span id="likes"></span> Likes</label>
+                    <p><strong>/{{whosprofile}} </strong><span id="cap"></span></p>
+                </div>
             </div>
         </div>
-    </div>
 
 
 
-    <div class="container">
-        <div class="col-md-12 profile-imgs">
-            <div id="loadposts">
+        <div class="container">
+            <div class="col-md-12 profile-imgs">
+                <div id="loadposts">
+                </div>
+                <br><br>
             </div>
-            <br><br>
-        </div>
 
-    </div>
+        </div>
     </main>
 
     <footer class="page-footer red">
@@ -279,6 +277,7 @@
     <script src="https://ucarecdn.com/libs/widget/3.0.0/uploadcare.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="{% static 'assets/js/upload-sys.js' %}"></script>
     <script type="text/javascript" src="{% static 'assets/js/log-pro.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/log-index.js' %}"></script>
 </body>
 
 </html>
