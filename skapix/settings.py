@@ -19,7 +19,7 @@ ALLOWED_HOSTS = ['skapix.herokuapp.com', 'localhost', '127.0.0.1']
 # Application definition
 INSTALLED_APPS = [
     'skapix',
-    'corsheaders',
+#    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
