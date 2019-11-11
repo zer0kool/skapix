@@ -14,7 +14,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY','nvqwd0(ptahogm2d*j4j1fkgk2gi!v07$f7go!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['skapix.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['skapixdemo.herokuapp.com', 'localhost', '127.0.0.1']
 
 # Application definition
 INSTALLED_APPS = [
