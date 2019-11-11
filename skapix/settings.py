@@ -12,7 +12,7 @@ STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
 SECRET_KEY = os.environ.get('SECRET_KEY','nvqwd0(ptahogm2d*j4j1fkgk2gi!v07$f7go!m!k_jf3p*9jp')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['skapixdemo.herokuapp.com', 'localhost', '127.0.0.1']
 
@@ -29,15 +29,15 @@ INSTALLED_APPS = [
 ]
 
 # Access-Control-Allow-Origin Security -- needs testing
-CORS_ORIGIN_ALLOW_ALL = False
-CORS_ORIGIN_WHITELIST = (
-    'localhost:8000', 'skapix.herokuapp.com',
-)
+#CORS_ORIGIN_ALLOW_ALL = False
+#CORS_ORIGIN_WHITELIST = (
+#    'localhost:8000', 'skapix.herokuapp.com',
+#)
 
 MIDDLEWARE = [
 #    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-#    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -129,7 +129,7 @@ AUTHENTICATION_BACKENDS = ( 'skapix.authb.AuthB', )
 CORS_REPLACE_HTTPS_REFERER      = True
 HOST_SCHEME                     = "https://"
 SECURE_PROXY_SSL_HEADER         = ('HTTP_X_FORWARDED_PROTO', 'https')
-#
+
 SECURE_SSL_REDIRECT             = True
 SESSION_COOKIE_SECURE           = True
 CSRF_COOKIE_SECURE              = True
