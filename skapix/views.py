@@ -3,7 +3,6 @@ from .models import User, Photo, Followers
 from .forms import *
 from django.contrib.auth import authenticate, login, logout as dlogout
 
-
 def ajaxsignup(request):
 	ajax = AjaxSignUp(request.POST)
 	context = {'ajax_output': ajax.output() }
@@ -11,11 +10,6 @@ def ajaxsignup(request):
 
 def ajaxsavephoto(request):
 	ajax = AjaxSavePhoto(request.POST, request.user)
-	context = { 'ajax_output': ajax.output() }
-	return render(request, 'ajax.html', context)
-
-def ajaxdeletephoto(request):
-	ajax = AjaxDeletePhoto(request.GET, request.user)
 	context = { 'ajax_output': ajax.output() }
 	return render(request, 'ajax.html', context)
 
@@ -82,9 +76,9 @@ def profile(request, username):
 
 		if u.profilepic == "":
 			u.profilepic = "static/assets/img/default.png"
-		context = { "ProfilePic": u.profilepic, "whosprofile": username, "logged_in_as": request.user.username, "following": following }
+		context = { "ProfilePic": u.profilepic, "whosprofile": username, "logged_in_as": request.user.username, "following": following, "useremail": u.email, "lastseen": u.last_login }
 		if request.user.is_authenticated:
-			return render(request, 'logged-in-profile.html', context)
+			return render(request, 'home.html', context)
 		return render(request, 'profile.html', context)
 	else:
 		return redirect(home)

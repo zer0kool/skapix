@@ -25,12 +25,19 @@ body {
     line-height: 1.42857143;
     color: #333;
     background-color: #f8f8f8;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     min-height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 
 main {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
     flex: 1 0 auto;
 }
 
@@ -88,6 +95,18 @@ main {
     width: 100%;
     min-height: 50px;
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
 .more-section label {
@@ -167,6 +186,7 @@ main {
     border: none;
     border-radius: 4px;
     padding: 11px;
+    -webkit-box-shadow: none;
     box-shadow: none;
     text-shadow: none;
     outline: none !important;
@@ -220,6 +240,7 @@ main {
     background-color: #FFF;
     border: 1px solid #e8e6e6;
     display: none;
+    z-index: 10;
 }
 
 .upload-photo-options h1 {
@@ -246,35 +267,42 @@ main {
     height: 50px;
     position: absolute;
     background-color: #FFF;
-    z-index: 100;
+    /*    z-index: 100;*/
     opacity: 0.4;
 }
 
 grayscale:hover {
+    -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
 }
 
 .invert:hover {
+    -webkit-filter: invert();
     filter: invert();
 }
 
 .grayscale:hover {
+    -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
 }
 
 .effect img {
+    -webkit-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
 }
 
 .blur:hover {
+    -webkit-filter: blur(10px);
     filter: blur(10px);
 }
 
 .mirror:hover {
+    -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
 }
 
 .flip:hover {
+    -webkit-transform: scaleY(-1);
     transform: scaleY(-1);
 }
 
@@ -293,6 +321,7 @@ grayscale:hover {
     background-color: #FFF;
     background-image: none;
     border: none;
+    -webkit-box-shadow: none;
     box-shadow: none;
 }
 
@@ -304,6 +333,7 @@ grayscale:hover {
 .menu-buttons button:focus {
     background-color: #FFF !important;
     outline: none !important;
+    -webkit-box-shadow: none !important;
     box-shadow: none !important;
 }
 
@@ -333,7 +363,7 @@ grayscale:hover {
 
 #upload-div,
 .photo-viewer {
-    width: 100%;
+    width: auto;
     height: auto;
     position: absolute;
     background-color: #ffffff;
@@ -341,8 +371,10 @@ grayscale:hover {
     display: none;
     /*box-shadow:2px 0px 12px #CCC;*/
     position: absolute;
-    top: -380px;
+    top: 0px;
     left: 0px;
+    right: 0px;
+    position: fixed
 }
 
 .overlay {
@@ -516,4 +548,60 @@ grayscale:hover {
     margin: 0px;
     opacity: 0.4;
     position: absolute;
+}
+
+.card .card-image img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    height: 300px;
+}
+
+.card label {
+    color: white !important;
+    background-color: #f44336;
+    padding: 10px;
+    border-radius: 10px;
+    padding-right: 30px;
+
+}
+
+.card-content p {
+    color: white !important;
+}
+
+.hidden-xs.more-section a {
+    width: 30%;
+}
+
+.save-photo {
+    margin: 10px 30px 20px !important;
+    height: 50px;
+    max-width: 400px;
+    display: block;
+    position: inherit;
+    top: 10px;
+}
+
+.card .card-image .card-title {
+    right: 18px !important;
+    bottom: -48px !important;
+    left: unset !important;
+}
+
+img#previewimg {
+    -o-object-fit: scale-down;
+    object-fit: scale-down;
+}
+
+.card {
+    border-radius: 20px !important;
+}
+
+.card .card-image img {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.card .card-reveal {
+    background-color: #282828db !important;
 }

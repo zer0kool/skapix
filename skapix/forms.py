@@ -162,6 +162,7 @@ class AjaxLikePhoto(Ajax):
 
 		return self.success("Photo Liked!")
 
+
 class AjaxPhotoFeed(Ajax):
 	def validate(self):
 		try:
@@ -198,7 +199,7 @@ class AjaxProfileFeed(Ajax):
 			return self.error("Malformed request, did not process.")
 		out = []
 		for item in Photo.objects.filter(owner=self.username).order_by('-date_uploaded')[int(self.start):int(self.start)+3]:
-			if PhotoLikes.objects.filter(liker=self.username).filter(postid=item.id).exists():
+			if PhotoLikes.objects.filter(liker=self.user.username).filter(postid=item.id).exists():
 				liked = True
 			else:
 				liked = False
@@ -220,11 +221,9 @@ class AjaxSetProfilePic(Ajax):
 		if self.url[0:20] != "https://ucarecdn.com" or self.baseurl[0:20] != "https://ucarecdn.com":
 			return self.error("Invalid image URL")
 
-		if self.user.username == self.user.username:
-
-		    u = User.objects.filter(username=self.user.username)[0]
-		    u.profilepic=self.url
-		    u.save()
+		u = User.objects.filter(username=self.user.username)[0]
+		u.profilepic=self.url
+		u.save()
 
 		return self.success("Profile Image Uploaded")
 
@@ -239,7 +238,7 @@ class AjaxFollow(Ajax):
 			return self.error("Unauthorised request.")
 
 		if self.user.username == self.follower:
- 			return self.error("Can't follow yourself")
+				return self.error("Can't follow yourself")
 
 		if not Followers.objects.filter(user=self.follower,follower=self.user.username).exists():
 			f = Followers(user=self.follower, follower=self.user.username).save()
@@ -256,18 +255,3 @@ class AjaxTagPhoto(Ajax):
 			self.follower = self.args[0]["user"]
 		except Exception as e:
 			return self.error("Malformed request, did not process.")
-
-
-class AjaxDeletePhoto(Ajax):
-	def validate(self):
-		try:
-			self.postid = self.args[0]["id"]
-		except Exception as e:
-			return self.error("Malformed request, did not process.")
-
-		if self.user == "NL":
-			return self.error("Unauthorised request.")
-
-		image = Photo.objects.filter(id=self.postid)
-		image.delete()
-		return self.success("Photo removed!")

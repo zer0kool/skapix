@@ -28,7 +28,7 @@ urlpatterns = [
     url(r'^ajax-sign-up$', views.ajaxsignup),
     url(r'^ajax-login$', views.ajaxlogin),
     url(r'^ajax-save-photo$', views.ajaxsavephoto),
-    url(r'^ajax-delete-photo$', views.ajaxdeletephoto),
+#    url(r'^ajax-delete-photo$', views.ajaxdeletephoto),
     url(r'^ajax-set-profile-pic$', views.ajaxsetprofilepic),
     url(r'^ajax-profile-feed$', views.ajaxprofilefeed),
     url(r'^ajax-like-photo$', views.ajaxlikephoto),

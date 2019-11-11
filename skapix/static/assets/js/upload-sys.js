@@ -52,9 +52,20 @@ function installWidgetPreviewSingle(widget, img) {
         }
     });
 }
+let whosurl = document.location.pathname.split('/')[1];
+let whoami = $("#loggedID").html().split('@')[1]
+if (whoami == whosurl) {
+    // hide follow btn
+    document.querySelector("#follow").remove();
+}
+
 $('#profilepic').click(function () {
-    SET_PROFILE_PIC = true;
-    $('#upload-but').click()
+    if (whoami != whosurl) {
+        SET_PROFILE_PIC = false;
+    } else {
+        SET_PROFILE_PIC = true;
+        $('#upload-but').click()
+    }
 });
 $('.upload-button').click(function () {
     if (SET_PROFILE_PIC == false) {

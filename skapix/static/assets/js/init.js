@@ -1,20 +1,23 @@
-(function ($) {
-    "use strict";
-    $(document).ready(function () {
-        // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
-        $('.modal').modal();
-        $('.slider').slider();
-        $('<span>I am in ALPHA TESTING</span>').add($('<button class="btn-flat toast-action">Undo</button>'));
-        //     Materialize.toast($toastContent, 10000);
-    });
-});
+//(function ($) {
+//    "use strict";
+//    $(document).ready(function () {
+//        // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+//        $('.modal').modal();
+//        $('.slider').slider();
+//        $('<span>I am in ALPHA TESTING</span>').add($('<button class="btn-flat toast-action">Undo</button>'));
+//        //     Materialize.toast($toastContent, 10000);
+//    });
+//});
+
+$('div#loading').fadeOut(3000);
+//window.sr = ScrollReveal({
+//    reset: false
+//});
 
 
-
-
-
-
-
+//
+//
+//
 // $('#delete').click(function () {
 //     $.ajax({
 //         type: "GET",
