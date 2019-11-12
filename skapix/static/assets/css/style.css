@@ -593,16 +593,52 @@ img#previewimg {
     object-fit: scale-down;
 }
 
+/*removing shar edges from cards*/
 .card,
 #card {
     border-radius: 20px !important;
 }
 
+/*well the above code wasnt enough.. lol*/
 .card .card-image img {
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
 }
 
+/*admit it, this look cool*/
 .card .card-reveal {
     background-color: #282828db !important;
+}
+
+/*preventing zoom on ios devices*/
+input {
+    font-size: 16px !important;
+    color: white;
+}
+
+/*fixing the backgrounf image for tiny screens
+this is a temp bg, will be removed eventualy*/
+body {
+    background-position: top;
+    background-size: inherit;
+    height: 100%;
+}
+
+/*i though it would be cool to make the icons circular*/
+.black-textio {
+    color: rgba(0, 0, 0, 0.87) !important;
+    padding: 7px;
+    background-color: aliceblue;
+    border-radius: 50%;
+    margin: -10px;
+    top: 15px;
+}
+
+/*centering the login form*/
+.center.container.xor.transparent {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
