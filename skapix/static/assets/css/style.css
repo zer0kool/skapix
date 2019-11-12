@@ -611,7 +611,8 @@ img#previewimg {
 }
 
 /*preventing zoom on ios devices*/
-input {
+input,
+.validate {
     font-size: 16px !important;
     color: white;
 }
