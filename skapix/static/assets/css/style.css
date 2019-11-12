@@ -593,7 +593,8 @@ img#previewimg {
     object-fit: scale-down;
 }
 
-.card {
+.card,
+#card {
     border-radius: 20px !important;
 }
 
