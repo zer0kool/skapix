@@ -6,7 +6,7 @@ body {
     display: block;
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
-    background-color: #292828;
+    background-color: #262525;
     color: #7b7b7b;
     -webkit-font-smoothing: subpixel-antialiased;
     -webkit-text-stroke: 1px transparent;
@@ -172,7 +172,6 @@ video {
     -webkit-transition: box-shadow .25s;
     border-radius: 0 !important;
     margin: 8px 0;
-    height: 410px
 }
 
 .card .card-content {
@@ -734,7 +733,7 @@ body.scale-effect .btn-holder .btn-play {
 #v-card-holder #v-card {
     position: relative;
     width: 100%;
-    height: 300px;
+    height: 400px;
     overflow: hidden;
     -webkit-transition: height 1s, color 1s, margin 1s;
     transition: height 1s, color 1s, margin 1s;
@@ -2770,11 +2769,4 @@ hr {
 
 .single-footer {
     margin: 0;
-}
-
-#upload-div label {
-    background: none;
-    color: black !important;
-    padding: 0;
-    font-size: 1rem;
 }

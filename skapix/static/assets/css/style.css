@@ -599,6 +599,10 @@ img#previewimg {
     border-radius: 20px !important;
 }
 
+#loadposts .card {
+    height: 410px
+}
+
 /*well the above code wasnt enough.. lol*/
 .card .card-image img {
     border-top-right-radius: 20px;
@@ -615,6 +619,10 @@ input,
 .validate {
     font-size: 16px !important;
     color: white;
+}
+
+.login-form input {
+    color: black !important;
 }
 
 /*fixing the backgrounf image for tiny screens
@@ -636,7 +644,8 @@ body {
 }
 
 /*centering the login form*/
-.center.container.xor.transparent {
+.center.container.xor.transparent,
+.container.section.login-form {
     position: fixed;
     left: 50%;
     top: 50%;
