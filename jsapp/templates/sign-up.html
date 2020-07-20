@@ -1,0 +1,61 @@
+
+{% extends "base.html" %}
+{% block title %}Create Account{% endblock %}
+
+{% block main %}
+       {% load static %}
+        <center>
+            <div class="container section login-form">
+                <div class="glass z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #E0F2F1;">
+                    <form class="col s12" method="post">
+                        {% csrf_token %}
+                        <div class='row'>
+                            <div class='col s12'>
+                                <div class="illustration">
+                                    <img class="responsive-img" src="{% static 'assets/img/logo.png' %}" style="height:10vh">
+                                    <div style="display: none" id="errors" class="alert red-text"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class='input-field col s12'>
+                                <i class="material-icons prefix">account_circle</i>
+                                <input class='validate' type='text' name='username' id='username' required="" />
+                                <label for='username' data-error="wrong">Create a username</label>
+                            </div>
+                        </div>
+
+                        <div class='row'>
+                            <div class='input-field col s12'>
+                                <i class="material-icons prefix">mail</i>
+                                <input class='validate' type='email' name='email' id='email' required="" />
+                                <label for='email' data-error="C'mon, use a legit email" data-success="Ok, the email seems legit">Enter your email</label>
+                            </div>
+                        </div>
+
+                        <div class='row'>
+                            <div class='input-field col s12'>
+                                <i class="material-icons prefix">enhanced_encryption</i>
+                                <input type='password' name='password' id='password' required="" />
+                                <label for='password'>Enter your password</label>
+                            </div>
+                        </div>
+
+                        <br />
+                        <center>
+                            <div class='row'>
+                                <button id="go" type='submit' name='btn_login' class='col s12 btn btn-large waves-effect indigo'>Create Account</button>
+                            </div>
+                        </center>
+                        <a href='/' class="forgot">Already got an account? Login here ...</a>
+                        <div class="section"></div>
+                    </form>
+                </div>
+            </div>
+        </center>
+{% endblock %}
+   {% block javascript %}
+    {% load static %}
+     <script type="text/javascript" src="{% static 'assets/js/sign-up.js' %}"></script>
+{% endblock %}
+

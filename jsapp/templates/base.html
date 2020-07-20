@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<!--login profile gage-->
+
+<head>
+    {% load static %}
+    <title>{% block title %}Computing Club{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="{% static 'assets/css/style.css' %}" media="screen,projection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper grey darken-4">
+                <a href="/" class="brand-logo logo"><i class="material-icons">compare</i>JSAPP</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a id="upload-but"><i class="material-icons">cloud_upload</i></a></li>
+                </ul>
+            </div>
+            <div style="height: 5px" class="green accent-4"><br></div>
+        </nav>
+
+    </header>
+    <main>
+        {% block main %}{% endblock %}
+    </main>
+    <footer>
+    </footer>
+    {% load static %}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="{% static 'assets/js/django-ajax.js' %}"></script>
+    {% block javascript %}{% endblock %}
+</body>
+
+</html>
